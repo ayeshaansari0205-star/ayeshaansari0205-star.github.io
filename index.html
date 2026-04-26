@@ -1,16 +1,1776 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>OroCare Dental Clinic</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OroCare Dental Clinic – Advanced Dental Care in Mumbra, Maharashtra</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="OroCare Dental Clinic in Mumbra, Maharashtra offers affordable, modern dental treatments – teeth cleaning, braces, implants, root canal, whitening & more. Book your appointment today." />
+  <meta name="keywords" content="dental clinic Mumbra, dentist Maharashtra, teeth whitening Mumbra, braces Mumbra, dental implants, root canal Mumbra, OroCare Dental" />
+  <meta name="author" content="OroCare Dental Clinic" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://orocaredental.in/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="OroCare Dental Clinic – Advanced Dental Care in Mumbra" />
+  <meta property="og:description" content="Comfortable, affordable, and modern dental treatments for your perfect smile in Mumbra, Maharashtra." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://orocaredental.in/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* =====================
+       CSS VARIABLES & RESET
+    ===================== */
+    :root {
+      --teal:       #0d9488;
+      --teal-light: #14b8a6;
+      --teal-pale:  #ccfbf1;
+      --blue-soft:  #e0f2fe;
+      --cream:      #f8fafc;
+      --white:      #ffffff;
+      --ink:        #0f172a;
+      --muted:      #64748b;
+      --border:     #e2e8f0;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:  0 4px 20px rgba(0,0,0,.10);
+      --shadow-lg:  0 12px 40px rgba(13,148,136,.15);
+      --radius:     16px;
+      --radius-sm:  8px;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+      --nav-h:        72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a  { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container {
+      width: min(90%, 1120px);
+      margin-inline: auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-pale);
+      padding: .3rem .8rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 540px;
+    }
+
+    section { padding: 5rem 0; }
+
+    /* =====================
+       BUTTONS
+    ===================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.75rem;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(13,148,136,.35);
+    }
+    .btn-primary:hover {
+      background: #0f766e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(13,148,136,.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+    }
+    .btn-outline:hover {
+      background: var(--teal);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--teal);
+    }
+    .btn-white:hover {
+      background: var(--teal-pale);
+      transform: translateY(-2px);
+    }
+
+    /* =====================
+       NAVIGATION
+    ===================== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      z-index: 900;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    #navbar.scrolled {
+      border-bottom-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--ink);
+    }
+    .nav-logo .logo-icon {
+      width: 38px; height: 38px;
+      background: var(--teal);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .nav-logo span { color: var(--teal); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color .2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+      transition: width .25s ease;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta { display: flex; align-items: center; gap: .75rem; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem;
+      z-index: 899;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: var(--shadow-md);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* =====================
+       HERO
+    ===================== */
+    #hero {
+      padding-top: calc(var(--nav-h) + 4rem);
+      padding-bottom: 5rem;
+      background: linear-gradient(135deg, #f0fdf9 0%, #e0f2fe 60%, #f8fafc 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(13,148,136,.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(14,165,233,.10) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: .4rem 1rem;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .5; transform: scale(1.3); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: .25rem;
+    }
+
+    /* Hero Image */
+    .hero-visual {
+      position: relative;
+    }
+    .hero-img-wrap {
+      border-radius: 32px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: var(--teal-pale);
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .hero-card {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .hero-card.card-top {
+      top: 1.5rem; left: -2rem;
+    }
+    .hero-card.card-bot {
+      bottom: 2rem; right: -1.5rem;
+    }
+    .hc-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--teal-pale);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .hc-text strong { display: block; font-size: .85rem; color: var(--ink); }
+    .hc-text span   { font-size: .75rem; color: var(--muted); }
+
+    /* =====================
+       ABOUT
+    ===================== */
+    #about { background: var(--white); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: var(--blue-soft);
+    }
+    .about-img-main img { width: 100%; height: 100%; object-fit: cover; }
+
+    .about-accent {
+      position: absolute;
+      bottom: -1.5rem; right: -1.5rem;
+      width: 180px; height: 180px;
+      background: var(--teal-pale);
+      border-radius: 20px;
+      z-index: -1;
+    }
+    .about-badge-float {
+      position: absolute;
+      bottom: 2rem; left: -2rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-badge-float .num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .about-badge-float p { font-size: .8rem; opacity: .85; margin-top: .2rem; }
+
+    .about-content { }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .75rem 1rem;
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .feature-pill i { color: var(--teal); font-size: 1rem; }
+
+    .about-actions { margin-top: 2rem; }
+
+    /* =====================
+       SERVICES
+    ===================== */
+    #services { background: var(--cream); }
+
+    .services-header { text-align: center; margin-bottom: 3.5rem; }
+    .services-header .section-sub { margin-inline: auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .svc-icon {
+      width: 56px; height: 56px;
+      background: var(--teal-pale);
+      color: var(--teal);
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      transition: background .3s;
+    }
+    .service-card:hover .svc-icon {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+    }
+    .service-card p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* =====================
+       WHY CHOOSE US
+    ===================== */
+    #why {
+      background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    #why::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 450px; height: 450px;
+      background: rgba(255,255,255,.05);
+      border-radius: 50%;
+    }
+    #why::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,.05);
+      border-radius: 50%;
+    }
+
+    .why-inner {
+      position: relative; z-index: 1;
+    }
+
+    .why-header { text-align: center; margin-bottom: 3.5rem; }
+    .why-header .section-label {
+      background: rgba(255,255,255,.15);
+      color: var(--white);
+    }
+    .why-header h2 { color: var(--white); }
+    .why-header .section-sub { color: rgba(255,255,255,.75); margin-inline: auto; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: all .3s;
+    }
+    .why-card:hover {
+      background: rgba(255,255,255,.18);
+      transform: translateY(-4px);
+    }
+    .why-icon {
+      width: 60px; height: 60px;
+      background: rgba(255,255,255,.15);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      color: var(--white);
+      margin: 0 auto 1.25rem;
+    }
+    .why-card h3 { font-size: 1.1rem; margin-bottom: .5rem; }
+    .why-card p  { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.6; }
+
+    /* =====================
+       TESTIMONIALS
+    ===================== */
+    #testimonials { background: var(--white); }
+
+    .test-header { text-align: center; margin-bottom: 3rem; }
+    .test-header .section-sub { margin-inline: auto; }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .test-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all .3s;
+    }
+    .test-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stars { color: #f59e0b; font-size: .85rem; margin-bottom: 1rem; }
+
+    .test-card blockquote {
+      font-size: .95rem;
+      color: var(--ink);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .test-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .test-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      border: 2px solid var(--teal);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      color: var(--teal);
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+    .test-name { font-size: .9rem; font-weight: 600; }
+    .test-meta { font-size: .78rem; color: var(--muted); }
+
+    /* =====================
+       BLOG PREVIEW
+    ===================== */
+    #blog { background: var(--cream); }
+
+    .blog-header { text-align: center; margin-bottom: 3rem; }
+    .blog-header .section-sub { margin-inline: auto; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all .3s;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .blog-img {
+      aspect-ratio: 16/9;
+      background: var(--teal-pale);
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-img img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--teal);
+    }
+
+    .blog-cat {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-pale);
+      padding: .2rem .6rem;
+      border-radius: 100px;
+      margin-bottom: .75rem;
+    }
+
+    .blog-body { padding: 1.5rem; }
+    .blog-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      line-height: 1.35;
+      margin-bottom: .5rem;
+      color: var(--ink);
+      transition: color .2s;
+    }
+    .blog-card:hover .blog-body h3 { color: var(--teal); }
+    .blog-body p { font-size: .88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+    .blog-meta i { color: var(--teal); margin-right: .25rem; }
+
+    /* =====================
+       CONTACT
+    ===================== */
+    #contact { background: var(--white); }
+
+    .contact-header { text-align: center; margin-bottom: 3.5rem; }
+    .contact-header .section-sub { margin-inline: auto; }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info { }
+
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .info-icon {
+      width: 46px; height: 46px;
+      background: var(--teal-pale);
+      color: var(--teal);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .info-text strong { display: block; font-size: .9rem; margin-bottom: .2rem; color: var(--ink); }
+    .info-text span   { font-size: .88rem; color: var(--muted); }
+    .info-text a      { color: var(--teal); font-weight: 500; }
+    .info-text a:hover { text-decoration: underline; }
+
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: #25d366;
+      color: var(--white);
+      padding: .9rem 1.5rem;
+      border-radius: 100px;
+      font-size: .95rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 16px rgba(37,211,102,.35);
+      transition: all .25s;
+    }
+    .wa-btn:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,211,102,.4);
+    }
+
+    /* Map */
+    .map-wrap {
+      margin-top: 2rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      display: block;
+    }
+
+    /* Form */
+    .contact-form-wrap {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+    .contact-form-wrap h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 1.75rem;
+      color: var(--ink);
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .4rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: .85rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: .92rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #94a3b8; }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13,148,136,.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit { width: 100%; justify-content: center; margin-top: .5rem; }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.75);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .footer-brand .logo .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--teal);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+    }
+    .footer-brand p { font-size: .88rem; line-height: 1.7; max-width: 240px; }
+
+    .footer-socials {
+      display: flex;
+      gap: .75rem;
+      margin-top: 1.25rem;
+    }
+    .social-link {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.7);
+      display: grid;
+      place-items: center;
+      font-size: .95rem;
+      transition: all .25s;
+    }
+    .social-link:hover {
+      background: var(--teal);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      letter-spacing: .03em;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: .6rem; }
+    .footer-col ul li a {
+      font-size: .88rem;
+      color: rgba(255,255,255,.65);
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--teal-light); }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: .85rem;
+      color: rgba(255,255,255,.65);
+      padding: .35rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .hours-item:last-child { border-bottom: none; }
+    .hours-item .day { font-weight: 500; color: rgba(255,255,255,.8); }
+    .hours-item .time { color: var(--teal-light); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .82rem;
+    }
+    .footer-bottom a { color: var(--teal-light); }
+
+    /* =====================
+       FLOATING WHATSAPP
+    ===================== */
+    .float-wa {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 58px; height: 58px;
+      background: #25d366;
+      color: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,.5);
+      z-index: 999;
+      transition: all .25s;
+      animation: float-bounce 3s ease-in-out infinite;
+    }
+    .float-wa:hover {
+      background: #1ebe5d;
+      transform: scale(1.1);
+    }
+    @keyframes float-bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-6px); }
+    }
+
+    /* =====================
+       SCROLL ANIMATIONS
+    ===================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* stagger */
+    .reveal:nth-child(2) { transition-delay: .1s; }
+    .reveal:nth-child(3) { transition-delay: .2s; }
+    .reveal:nth-child(4) { transition-delay: .3s; }
+    .reveal:nth-child(5) { transition-delay: .4s; }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 1024px) {
+      .hero-card.card-top { left: -1rem; }
+      .hero-card.card-bot { right: -.5rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-stats { gap: 1.5rem; }
+
+      .about-inner { grid-template-columns: 1fr; }
+      .about-img-wrap { max-width: 420px; margin-inline: auto; }
+
+      .contact-inner { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .about-features { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 3.5rem 0; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .hero-stats { flex-wrap: wrap; gap: 1rem; }
+      .float-wa { bottom: 1rem; right: 1rem; width: 52px; height: 52px; font-size: 1.4rem; }
+    }
+
+    /* Utility */
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 2rem; }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to OroCare Dental Clinic 🦷</h1>
-  <p>We provide:</p>
-  <ul>
-    <li>Teeth Cleaning</li>
-    <li>Braces</li>
-    <li>Dental Implants</li>
-  </ul>
-  <p>Book your appointment today!</p>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#hero" aria-label="OroCare Dental home">
+      <div class="logo-icon" aria-hidden="true"><i class="fa-solid fa-tooth"></i></div>
+      <span>Oro<span>Care</span></span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="tel:+919876543210" class="btn btn-outline" style="padding:.65rem 1.2rem; font-size:.85rem;">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="#contact" class="btn btn-primary" style="padding:.65rem 1.2rem; font-size:.85rem;">
+        Book Appointment
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#why">Why Choose Us</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:+919876543210" class="btn btn-primary" style="margin-top:.5rem;">
+    <i class="fa-solid fa-phone"></i> Call Now
+  </a>
+</div>
+
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-label="Hero">
+  <div class="container hero-inner">
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot" aria-hidden="true"></span>
+        Now Accepting New Patients in Mumbra
+      </div>
+
+      <h1 class="hero-title">
+        Advanced Dental Care<br/>in <em>Mumbra</em>
+      </h1>
+      <p class="hero-sub">
+        Comfortable, affordable, and modern treatments for your perfect smile — right in your neighbourhood.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          <i class="fa-solid fa-calendar-check"></i> Book Appointment
+        </a>
+        <a href="tel:+919876543210" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">1500+</div>
+          <div class="stat-label">Happy Patients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Treatments</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80"
+          alt="Dentist performing a dental procedure in a modern clinic"
+          loading="eager"
+        />
+      </div>
+
+      <div class="hero-card card-top">
+        <div class="hc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="hc-text">
+          <strong>Safe & Hygienic</strong>
+          <span>Sterilised equipment</span>
+        </div>
+      </div>
+
+      <div class="hero-card card-bot">
+        <div class="hc-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="hc-text">
+          <strong>4.9 / 5 Rating</strong>
+          <span>200+ Google Reviews</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===== ABOUT ===== -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container about-inner">
+
+    <div class="about-img-wrap reveal-left">
+      <div class="about-img-main">
+        <img
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80"
+          alt="Interior of OroCare Dental Clinic, a modern and clean dental facility"
+          loading="lazy"
+        />
+      </div>
+      <div class="about-accent" aria-hidden="true"></div>
+      <div class="about-badge-float" aria-hidden="true">
+        <div class="num">10+</div>
+        <p>Years of trusted care</p>
+      </div>
+    </div>
+
+    <div class="about-content reveal-right">
+      <span class="section-label">About OroCare</span>
+      <h2 class="section-title" id="about-title">
+        Your Trusted Family Dental Clinic in Mumbra
+      </h2>
+      <p style="color: var(--muted); line-height:1.8; margin-bottom: 1rem;">
+        At OroCare Dental Clinic, we believe everyone deserves a healthy, confident smile. Founded with a passion for patient-centred care, we combine modern dentistry with genuine compassion to make every visit comfortable and stress-free.
+      </p>
+      <p style="color: var(--muted); line-height:1.8;">
+        From routine check-ups to complex restorations, our experienced team uses the latest technology to deliver exceptional results — all at prices that work for Mumbra families.
+      </p>
+
+      <div class="about-features">
+        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> ISO-Certified Hygiene</div>
+        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Digital X-Rays</div>
+        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Pain-Free Treatment</div>
+        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Child-Friendly Clinic</div>
+        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> EMI Available</div>
+        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Emergency Care</div>
+      </div>
+
+      <div class="about-actions">
+        <a href="#contact" class="btn btn-primary">
+          Book a Free Consultation <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===== SERVICES ===== -->
+<section id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title" id="services-title">Our Dental Services</h2>
+      <p class="section-sub">Comprehensive dental care under one roof — from preventive hygiene to advanced cosmetic treatments.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><i class="fa-solid fa-teeth"></i></div>
+        <h3>Teeth Cleaning</h3>
+        <p>Professional scaling and polishing to remove plaque, tartar, and stains — keeping your gums healthy and your smile bright.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <h3>Braces & Orthodontics</h3>
+        <p>Traditional metal braces and clear aligner options to straighten your teeth and correct bite issues for all ages.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>Dental Implants</h3>
+        <p>Permanent, natural-looking tooth replacements anchored to your jawbone — the gold standard for missing teeth.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><i class="fa-solid fa-syringe"></i></div>
+        <h3>Root Canal Treatment</h3>
+        <p>Pain-relieving root canal therapy to save infected teeth using modern anaesthesia — virtually painless and highly effective.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional-grade whitening treatments that lift stubborn stains by several shades — safely and comfortably.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><i class="fa-solid fa-tooth"></i></div>
+        <h3>Dental Check-up & X-Ray</h3>
+        <p>Comprehensive oral examinations with digital X-rays to detect issues early and keep your dental health on track.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section id="why" aria-labelledby="why-title">
+  <div class="container why-inner">
+    <div class="why-header reveal">
+      <span class="section-label">Why OroCare?</span>
+      <h2 class="section-title" id="why-title">Why Patients Choose Us</h2>
+      <p class="section-sub">We're not just a clinic — we're your long-term dental health partners.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+        <h3>Experienced Dentist</h3>
+        <p>Our lead dentist brings over a decade of expertise across restorative, cosmetic, and orthodontic dentistry.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-microscope"></i></div>
+        <h3>Modern Equipment</h3>
+        <p>Digital X-rays, laser dentistry, and sterilised instruments ensure precise, safe, and comfortable treatments.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-tags"></i></div>
+        <h3>Affordable Pricing</h3>
+        <p>Transparent, fair pricing with EMI options so quality dental care is accessible to every family in Mumbra.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+        <h3>Friendly Environment</h3>
+        <p>A warm, anxiety-free atmosphere designed for patients of all ages — especially nervous or first-time visitors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" aria-labelledby="test-title">
+  <div class="container">
+    <div class="test-header reveal">
+      <span class="section-label">Patient Reviews</span>
+      <h2 class="section-title" id="test-title">What Our Patients Say</h2>
+      <p class="section-sub">Real stories from families and individuals we've helped in Mumbra and nearby areas.</p>
+    </div>
+
+    <div class="test-grid">
+      <article class="test-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <blockquote>
+          "I was terrified of dentists, but OroCare completely changed that. The doctor was gentle, explained everything clearly, and my root canal was nearly painless. I'm so relieved!"
+        </blockquote>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">A</div>
+          <div>
+            <div class="test-name">Aisha Shaikh</div>
+            <div class="test-meta">Root Canal Treatment · Mumbra</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="test-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <blockquote>
+          "Got braces for my daughter here. The entire treatment was smooth, affordable, and the staff was so patient with her. Highly recommend OroCare to all parents!"
+        </blockquote>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">R</div>
+          <div>
+            <div class="test-name">Rajan Patil</div>
+            <div class="test-meta">Braces & Orthodontics · Mumbra</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="test-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <blockquote>
+          "The whitening treatment gave me incredible results in just one session. The clinic is spotlessly clean and the team is absolutely wonderful. My go-to dentist forever!"
+        </blockquote>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">P</div>
+          <div>
+            <div class="test-name">Priya Nair</div>
+            <div class="test-meta">Teeth Whitening · Thane</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="test-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <blockquote>
+          "Had a dental implant done here and couldn't be happier. The doctor is highly skilled, the pricing is very fair, and the follow-up care was excellent. Truly professional."
+        </blockquote>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">M</div>
+          <div>
+            <div class="test-name">Mohammed Ansari</div>
+            <div class="test-meta">Dental Implants · Mumbra</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== BLOG PREVIEW ===== -->
+<section id="blog" aria-labelledby="blog-title">
+  <div class="container">
+    <div class="blog-header reveal">
+      <span class="section-label">Dental Tips & Guides</span>
+      <h2 class="section-title" id="blog-title">From Our Dental Blog</h2>
+      <p class="section-sub">Expert advice to help you maintain a healthy smile between visits.</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <div class="blog-img">
+          <img
+            src="https://images.unsplash.com/photo-1559589689-577aabd1db4f?w=500&q=75"
+            alt="Person demonstrating proper brushing technique for oral hygiene"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">Oral Hygiene</span>
+          <h3>10 Daily Oral Hygiene Habits That Dentists Swear By</h3>
+          <p>From the right brushing technique to the foods that secretly harm your enamel — here's what you need to know.</p>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> June 2025</span>
+            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal">
+        <div class="blog-img">
+          <img
+            src="https://images.unsplash.com/photo-1588776814546-1ffbb39df568?w=500&q=75"
+            alt="Close-up of dental braces on a patient's teeth"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">Orthodontics</span>
+          <h3>Braces vs. Clear Aligners: Which Is Right for You?</h3>
+          <p>A complete guide to choosing between traditional braces and modern invisible aligners — based on your lifestyle and budget.</p>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> May 2025</span>
+            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal">
+        <div class="blog-img">
+          <img
+            src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=500&q=75"
+            alt="Bright white smile after teeth whitening treatment"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">Cosmetic Dentistry</span>
+          <h3>Teeth Whitening: What Actually Works (And What Doesn't)</h3>
+          <p>Cut through the myths. We break down professional vs. at-home whitening, safety tips, and realistic expectations.</p>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> April 2025</span>
+            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="text-center mt-2 reveal">
+      <a href="#blog" class="btn btn-outline">View All Articles <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-header reveal">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title" id="contact-title">Book Your Appointment</h2>
+      <p class="section-sub">Reach out to us — we'll confirm your slot within a few hours.</p>
+    </div>
+
+    <div class="contact-inner">
+
+      <!-- Info -->
+      <div class="contact-info reveal-left">
+
+        <div class="info-item">
+          <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
+          <div class="info-text">
+            <strong>Phone</strong>
+            <span><a href="tel:+919876543210">+91 98765 43210</a></span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+          <div class="info-text">
+            <strong>Email</strong>
+            <span><a href="mailto:hello@orocaredental.in">hello@orocaredental.in</a></span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="info-text">
+            <strong>Address</strong>
+            <span>OroCare Dental Clinic,<br/>Shop No. 5, Near Bus Stop,<br/>Mumbra, Maharashtra – 400612</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+          <div class="info-text">
+            <strong>Working Hours</strong>
+            <span>Mon – Sat: 10:00 AM – 8:00 PM<br/>Sunday: 10:00 AM – 2:00 PM</span>
+          </div>
+        </div>
+
+        <a
+          href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20OroCare%20Dental%20Clinic."
+          class="wa-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp" style="font-size:1.2rem;"></i>
+          Chat on WhatsApp
+        </a>
+
+        <div class="map-wrap" aria-label="OroCare Dental Clinic location on map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15066.975297434384!2d73.00698!3d19.17596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c00e4b4e7c3d%3A0x4e5a7bcf43b72a7!2sMumbra%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="OroCare Dental Clinic Map – Mumbra, Maharashtra"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap reveal-right">
+        <h3>Send Us a Message</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" name="name" placeholder="Your full name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="fphone">Phone Number *</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="femail">Email Address</label>
+          <input type="email" id="femail" name="email" placeholder="you@example.com" autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="fservice">Service Interested In</label>
+          <select id="fservice" name="service">
+            <option value="">Select a service…</option>
+            <option>Teeth Cleaning</option>
+            <option>Braces & Orthodontics</option>
+            <option>Dental Implants</option>
+            <option>Root Canal Treatment</option>
+            <option>Teeth Whitening</option>
+            <option>General Check-up</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" name="message" placeholder="Tell us about your concern or preferred appointment time…"></textarea>
+        </div>
+
+        <button type="button" class="btn btn-primary form-submit" onclick="handleFormSubmit()">
+          <i class="fa-solid fa-paper-plane"></i> Send Appointment Request
+        </button>
+
+        <p style="font-size:.8rem; color:var(--muted); margin-top:1rem; text-align:center;">
+          <i class="fa-solid fa-lock" style="color:var(--teal);"></i>
+          Your information is safe with us. We never share your data.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon" aria-hidden="true"><i class="fa-solid fa-tooth"></i></div>
+          <span>OroCare <span style="color:var(--teal-light);">Dental</span></span>
+        </div>
+        <p>Your trusted dental clinic in Mumbra — delivering modern, compassionate care for the whole family.</p>
+        <div class="footer-socials" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="social-link" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#testimonials">Patient Reviews</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Teeth Cleaning</a></li>
+          <li><a href="#services">Braces & Orthodontics</a></li>
+          <li><a href="#services">Dental Implants</a></li>
+          <li><a href="#services">Root Canal</a></li>
+          <li><a href="#services">Teeth Whitening</a></li>
+          <li><a href="#services">Check-up & X-Ray</a></li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div class="footer-col">
+        <h4>Working Hours</h4>
+        <div class="hours-item"><span class="day">Mon – Fri</span><span class="time">10 AM – 8 PM</span></div>
+        <div class="hours-item"><span class="day">Saturday</span><span class="time">10 AM – 8 PM</span></div>
+        <div class="hours-item"><span class="day">Sunday</span><span class="time">10 AM – 2 PM</span></div>
+        <div style="margin-top:1rem;">
+          <a href="tel:+919876543210" style="color:var(--teal-light); font-size:.9rem; font-weight:600;">
+            <i class="fa-solid fa-phone" style="margin-right:.4rem;"></i>+91 98765 43210
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 OroCare Dental Clinic, Mumbra, Maharashtra. All rights reserved.</p>
+      <p>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Use</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a
+  href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20OroCare%20Dental%20Clinic."
+  class="float-wa"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat on WhatsApp"
+  title="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  /* --- Navbar Scroll State --- */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* --- Hamburger Menu --- */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* --- Scroll Reveal --- */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  /* --- Form Submit Handler --- */
+  function handleFormSubmit() {
+    const name  = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+
+    if (!name || !phone) {
+      alert('Please fill in your name and phone number so we can reach you.');
+      return;
+    }
+
+    const service = document.getElementById('fservice').value;
+    const msg     = document.getElementById('fmsg').value.trim();
+    const waText  = encodeURIComponent(
+      `Hello! I'd like to book an appointment at OroCare Dental Clinic.\n\nName: ${name}\nPhone: ${phone}${service ? '\nService: ' + service : ''}${msg ? '\nMessage: ' + msg : ''}`
+    );
+
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/919876543210?text=${waText}`, '_blank', 'noopener,noreferrer');
+  }
+
+  /* --- Smooth anchor for older browsers --- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
