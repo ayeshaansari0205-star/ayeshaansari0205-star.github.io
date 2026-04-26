@@ -621,6 +621,94 @@
     .why-card p  { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.6; }
 
     /* =====================
+       DOCTORS
+    ===================== */
+    #doctors { background: var(--cream); }
+
+    .doctors-header { text-align: center; margin-bottom: 3rem; }
+    .doctors-header .section-sub { margin-inline: auto; }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 780px;
+      margin-inline: auto;
+    }
+
+    .doctor-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .doctor-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    }
+    .doctor-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .doctor-avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      border: 4px solid var(--teal);
+      margin: 0 auto 1.25rem;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--teal);
+      box-shadow: 0 4px 16px rgba(13,148,136,.2);
+    }
+
+    .doctor-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin-bottom: .25rem;
+    }
+    .doctor-degree {
+      display: inline-block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--teal);
+      background: var(--teal-pale);
+      padding: .2rem .7rem;
+      border-radius: 100px;
+      margin-bottom: .75rem;
+    }
+    .doctor-college {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .doctor-exp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .doctor-exp i { color: var(--teal); }
+
+    @media (max-width: 600px) {
+      .doctors-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =====================
        TESTIMONIALS
     ===================== */
     #testimonials { background: var(--white); }
@@ -1086,6 +1174,7 @@
     <ul class="nav-links" role="list">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Doctors</a></li>
       <li><a href="#why">Why Us</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#blog">Blog</a></li>
@@ -1093,11 +1182,11 @@
     </ul>
 
     <div class="nav-cta">
-      <a href="tel:+919876543210" class="btn btn-outline" style="padding:.65rem 1.2rem; font-size:.85rem;">
+      <a href="tel:+917021900617" class="btn btn-outline" style="padding:.65rem 1.2rem; font-size:.85rem;">
         <i class="fa-solid fa-phone"></i> Call Now
       </a>
       <a href="#contact" class="btn btn-primary" style="padding:.65rem 1.2rem; font-size:.85rem;">
-        Book Appointment
+        Contact Us
       </a>
     </div>
 
@@ -1111,11 +1200,12 @@
 <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
   <a href="#about">About</a>
   <a href="#services">Services</a>
+  <a href="#doctors">Doctors</a>
   <a href="#why">Why Choose Us</a>
   <a href="#testimonials">Reviews</a>
   <a href="#blog">Blog</a>
   <a href="#contact">Contact</a>
-  <a href="tel:+919876543210" class="btn btn-primary" style="margin-top:.5rem;">
+  <a href="tel:+917021900617" class="btn btn-primary" style="margin-top:.5rem;">
     <i class="fa-solid fa-phone"></i> Call Now
   </a>
 </div>
@@ -1140,9 +1230,9 @@
 
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">
-          <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          <i class="fa-solid fa-envelope"></i> Contact Us
         </a>
-        <a href="tel:+919876543210" class="btn btn-outline">
+        <a href="tel:+917021900617" class="btn btn-outline">
           <i class="fa-solid fa-phone"></i> Call Now
         </a>
       </div>
@@ -1153,7 +1243,7 @@
           <div class="stat-label">Happy Patients</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">10+</div>
+          <div class="stat-num">25+</div>
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-item">
@@ -1207,7 +1297,7 @@
       </div>
       <div class="about-accent" aria-hidden="true"></div>
       <div class="about-badge-float" aria-hidden="true">
-        <div class="num">10+</div>
+        <div class="num">25+</div>
         <p>Years of trusted care</p>
       </div>
     </div>
@@ -1228,14 +1318,14 @@
         <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> ISO-Certified Hygiene</div>
         <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Digital X-Rays</div>
         <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Pain-Free Treatment</div>
-        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Child-Friendly Clinic</div>
+        <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Paediatric Dentistry</div>
         <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> EMI Available</div>
         <div class="feature-pill"><i class="fa-solid fa-check-circle"></i> Emergency Care</div>
       </div>
 
       <div class="about-actions">
         <a href="#contact" class="btn btn-primary">
-          Book a Free Consultation <i class="fa-solid fa-arrow-right"></i>
+          Contact Us <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -1289,6 +1379,12 @@
         <h3>Dental Check-up & X-Ray</h3>
         <p>Comprehensive oral examinations with digital X-rays to detect issues early and keep your dental health on track.</p>
       </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><i class="fa-solid fa-child"></i></div>
+        <h3>Paediatric Dentistry</h3>
+        <p>Gentle, child-friendly dental care designed to make little ones feel safe and comfortable — building healthy habits from an early age.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -1306,8 +1402,8 @@
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
-        <h3>Experienced Dentist</h3>
-        <p>Our lead dentist brings over a decade of expertise across restorative, cosmetic, and orthodontic dentistry.</p>
+        <h3>25+ Years Experience</h3>
+        <p>Our dentists bring over 25 years of expertise each — across restorative, cosmetic, orthodontic, and paediatric dentistry.</p>
       </div>
 
       <div class="why-card reveal">
@@ -1327,6 +1423,50 @@
         <h3>Friendly Environment</h3>
         <p>A warm, anxiety-free atmosphere designed for patients of all ages — especially nervous or first-time visitors.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== DOCTORS ===== -->
+<section id="doctors" aria-labelledby="doctors-title">
+  <div class="container">
+    <div class="doctors-header reveal">
+      <span class="section-label">Meet Our Doctors</span>
+      <h2 class="section-title" id="doctors-title">Experienced & Caring Dental Team</h2>
+      <p class="section-sub">With over 25 years of experience each, our qualified dentists deliver exceptional care with a gentle touch.</p>
+    </div>
+
+    <div class="doctors-grid">
+
+      <div class="doctor-card reveal">
+        <div class="doctor-avatar" aria-hidden="true">PA</div>
+        <h3>Dr. Parvez Ansari</h3>
+        <span class="doctor-degree">BDS</span>
+        <p class="doctor-college">
+          <i class="fa-solid fa-graduation-cap" style="color:var(--teal); margin-right:.3rem;"></i>
+          GDC Mumbai
+        </p>
+        <div class="doctor-exp">
+          <i class="fa-solid fa-briefcase-medical"></i>
+          25+ Years of Experience
+        </div>
+      </div>
+
+      <div class="doctor-card reveal">
+        <div class="doctor-avatar" aria-hidden="true">SA</div>
+        <h3>Dr. Shabana Ansari</h3>
+        <span class="doctor-degree">BDS</span>
+        <p class="doctor-college">
+          <i class="fa-solid fa-graduation-cap" style="color:var(--teal); margin-right:.3rem;"></i>
+          GDC Mumbai
+        </p>
+        <div class="doctor-exp">
+          <i class="fa-solid fa-briefcase-medical"></i>
+          25+ Years of Experience
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1406,9 +1546,9 @@
           "Had a dental implant done here and couldn't be happier. The doctor is highly skilled, the pricing is very fair, and the follow-up care was excellent. Truly professional."
         </blockquote>
         <div class="test-author">
-          <div class="test-avatar" aria-hidden="true">M</div>
+          <div class="test-avatar" aria-hidden="true">V</div>
           <div>
-            <div class="test-name">Mohammed Ansari</div>
+            <div class="test-name">Vikram Desai</div>
             <div class="test-meta">Dental Implants · Mumbra</div>
           </div>
         </div>
@@ -1498,7 +1638,7 @@
   <div class="container">
     <div class="contact-header reveal">
       <span class="section-label">Get in Touch</span>
-      <h2 class="section-title" id="contact-title">Book Your Appointment</h2>
+      <h2 class="section-title" id="contact-title">Contact Us</h2>
       <p class="section-sub">Reach out to us — we'll confirm your slot within a few hours.</p>
     </div>
 
@@ -1511,7 +1651,7 @@
           <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
           <div class="info-text">
             <strong>Phone</strong>
-            <span><a href="tel:+919876543210">+91 98765 43210</a></span>
+            <span><a href="tel:+917021900617">+91 70219 00617</a></span>
           </div>
         </div>
 
@@ -1535,12 +1675,12 @@
           <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
           <div class="info-text">
             <strong>Working Hours</strong>
-            <span>Mon – Sat: 10:00 AM – 8:00 PM<br/>Sunday: 10:00 AM – 2:00 PM</span>
+            <span>Mon – Sat: 10:00 AM – 1:30 PM &amp; 5:30 PM – 9:00 PM<br/>Sunday: Closed</span>
           </div>
         </div>
 
         <a
-          href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20OroCare%20Dental%20Clinic."
+          href="https://wa.me/917021900617?text=Hello%2C%20I%27d%20like%20to%20contact%20OroCare%20Dental%20Clinic."
           class="wa-btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -1601,7 +1741,7 @@
         </div>
 
         <button type="button" class="btn btn-primary form-submit" onclick="handleFormSubmit()">
-          <i class="fa-solid fa-paper-plane"></i> Send Appointment Request
+          <i class="fa-solid fa-paper-plane"></i> Send Message
         </button>
 
         <p style="font-size:.8rem; color:var(--muted); margin-top:1rem; text-align:center;">
@@ -1630,7 +1770,7 @@
         <div class="footer-socials" aria-label="Social media links">
           <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/917021900617" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="#" class="social-link" aria-label="Google"><i class="fa-brands fa-google"></i></a>
         </div>
       </div>
@@ -1657,19 +1797,19 @@
           <li><a href="#services">Dental Implants</a></li>
           <li><a href="#services">Root Canal</a></li>
           <li><a href="#services">Teeth Whitening</a></li>
-          <li><a href="#services">Check-up & X-Ray</a></li>
+          <li><a href="#services">Paediatric Dentistry</a></li>
         </ul>
       </div>
 
       <!-- Hours -->
       <div class="footer-col">
         <h4>Working Hours</h4>
-        <div class="hours-item"><span class="day">Mon – Fri</span><span class="time">10 AM – 8 PM</span></div>
-        <div class="hours-item"><span class="day">Saturday</span><span class="time">10 AM – 8 PM</span></div>
-        <div class="hours-item"><span class="day">Sunday</span><span class="time">10 AM – 2 PM</span></div>
+        <div class="hours-item"><span class="day">Mon – Sat (Morning)</span><span class="time">10 AM – 1:30 PM</span></div>
+        <div class="hours-item"><span class="day">Mon – Sat (Evening)</span><span class="time">5:30 PM – 9 PM</span></div>
+        <div class="hours-item"><span class="day">Sunday</span><span class="time" style="color:#f87171;">Closed</span></div>
         <div style="margin-top:1rem;">
-          <a href="tel:+919876543210" style="color:var(--teal-light); font-size:.9rem; font-weight:600;">
-            <i class="fa-solid fa-phone" style="margin-right:.4rem;"></i>+91 98765 43210
+          <a href="tel:+917021900617" style="color:var(--teal-light); font-size:.9rem; font-weight:600;">
+            <i class="fa-solid fa-phone" style="margin-right:.4rem;"></i>+91 70219 00617
           </a>
         </div>
       </div>
@@ -1688,7 +1828,7 @@
 
 <!-- ===== FLOATING WHATSAPP ===== -->
 <a
-  href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20OroCare%20Dental%20Clinic."
+  href="https://wa.me/917021900617?text=Hello%2C%20I%27d%20like%20to%20contact%20OroCare%20Dental%20Clinic."
   class="float-wa"
   target="_blank"
   rel="noopener noreferrer"
@@ -1753,11 +1893,11 @@
     const service = document.getElementById('fservice').value;
     const msg     = document.getElementById('fmsg').value.trim();
     const waText  = encodeURIComponent(
-      `Hello! I'd like to book an appointment at OroCare Dental Clinic.\n\nName: ${name}\nPhone: ${phone}${service ? '\nService: ' + service : ''}${msg ? '\nMessage: ' + msg : ''}`
+      `Hello! I'd like to get in touch with OroCare Dental Clinic.\n\nName: ${name}\nPhone: ${phone}${service ? '\nService: ' + service : ''}${msg ? '\nMessage: ' + msg : ''}`
     );
 
     // Open WhatsApp with pre-filled message
-    window.open(`https://wa.me/919876543210?text=${waText}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/917021900617?text=${waText}`, '_blank', 'noopener,noreferrer');
   }
 
   /* --- Smooth anchor for older browsers --- */
