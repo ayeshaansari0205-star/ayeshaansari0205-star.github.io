@@ -427,14 +427,12 @@
     .about-img-wrap {
       position: relative;
     }
-    .about-img-main {
-      border-radius: 24px;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      background: var(--blue-soft);
-    }
-    .about-img-main img { width: 100%; height: 100%; object-fit: cover; }
-
+      .about-img-main {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--blue-soft);
+}
+.about-img-main img { width: 100%; height: auto; }
     .about-accent {
       position: absolute;
       bottom: -1.5rem; right: -1.5rem;
@@ -1919,5 +1917,5 @@
   });
 </script>
 
-</body>
+<script>document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('section').forEach(s=>{let t=(s.innerText||'').toLowerCase();if(t.includes('blog')||t.includes('send us a message'))s.remove();}));</script></body>
 </html>
