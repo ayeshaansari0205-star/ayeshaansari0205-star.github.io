@@ -670,7 +670,14 @@
       font-size: 2.2rem;
       color: var(--teal);
       box-shadow: 0 4px 16px rgba(13,148,136,.2);
+      overflow: hidden;
     }
+    .doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
 
     .doctor-card h3 {
       font-family: var(--font-display);
@@ -1528,7 +1535,7 @@
           "The whitening treatment gave me incredible results in just one session. The clinic is spotlessly clean and the team is absolutely wonderful. My go-to dentist forever!"
         </blockquote>
         <div class="test-author">
-          <div class="test-avatar" aria-hidden="true">P</div>
+          <div class="test-avatar" aria-hidden="true">A</div>
           <div>
             <div class="test-name">Abubakar Ansari</div>
             <div class="test-meta">Teeth Whitening · Thane</div>
@@ -1546,7 +1553,7 @@
           "Had a dental implant done here and couldn't be happier. The doctor is highly skilled, the pricing is very fair, and the follow-up care was excellent. Truly professional."
         </blockquote>
         <div class="test-author">
-          <div class="test-avatar" aria-hidden="true">V</div>
+          <div class="test-avatar" aria-hidden="true">T</div>
           <div>
             <div class="test-name">Tasmiya Khan</div>
             <div class="test-meta">Dental Implants · Mumbra</div>
@@ -1912,5 +1919,5 @@
   });
 </script>
 
-<script>document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('section').forEach(s=>{let t=(s.innerText||'').toLowerCase();if(t.includes('blog')||t.includes('send us a message'))s.remove();}));</script></body>
+</body>
 </html>
